@@ -1,0 +1,98 @@
+.packs {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.more-information {
+  background-color: lightblue;
+  border: none;
+  padding: 10px 50px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.more-information:hover {
+  background-color: rgb(152, 190, 202);
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.close-button {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.close-button:hover {
+  background-color: lightcyan;
+}
+
+.close-button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+}
+
+.form-button-modal {
+  display: flex;
+  justify-content: center;
+}
+
+.itens {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 300px;
+  min-height: 100px;
+  max-height: 220px;
+  margin: 20px 20px;
+}
+
+.card-title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: 10px 20px;
+}
+
+.card-text {
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.card-product {
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 300px;
+  min-height: 100px;
+  max-height: 220px;
+  margin: 20px 20px;
+}

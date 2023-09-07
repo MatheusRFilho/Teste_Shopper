@@ -1,0 +1,30 @@
+.nav-bar {
+  /* position: fixed; */
+  background-color:white;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  justify-content: space-around;
+  padding: 20px;
+
+  box-shadow: 60px -16px teal;
+}
+
+.linkActive {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: darkslategray;
+  cursor: pointer;
+} 
+
+.link {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: lightslategray;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: rgb(68, 77, 87);
+} 

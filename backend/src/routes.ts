@@ -9,14 +9,13 @@ const csvReader = new CsvReaderController();
 const productController = new ProductController();
 const packsController = new PacksController();
 
+//products
 Routes.post('/validate', UploadMiddleware.single('file'), csvReader.validate);
-
-
 Routes.get('/products', productController.getAll);
+Routes.post('/update-products', productController.update);
+
+//packs
 Routes.get('/packs', packsController.getAll);
-
 Routes.get('/packs/:id', packsController.getInfoByPackId);
-
-
 
 export { Routes };

@@ -1,9 +1,7 @@
 import { Request, Response } from 'express';
 import fs from 'fs';
 import csvParser from 'csv-parser';
-
 import { CsvInterface, ProductsInterface } from '../model/interfaces';
-
 import { db } from '../database';
 
 class CsvReaderController {
@@ -47,22 +45,23 @@ class CsvReaderController {
       productResults.forEach(({ product, newPrice }) => {
         const percentualAllowed = product.sales_price * (10 / 100);
         if (product.cost_price > newPrice) {
+
           dataInvalid.push(`O novo preço do produto ${product.code} é menor que o preço de custo!`); 
         } else {
           if (newPrice > product.sales_price) {
             if (newPrice - product.sales_price >= percentualAllowed) {
+
               dataInvalid.push(`A alteração do produto ${product.code} foi maior que 10% do valor atual`);
             }
           } else {
-            if (product.sales_price - newPrice >= percentualAllowed) {
-              dataInvalid.push(`A alteração do produto ${product.code} foi menor que 10% do valor atual`); 
+            if (product.sales_price - newPrice >= percentualAllowed) { dataInvalid.push(`A alteração do produto ${product.code} foi menor que 10% do valor atual`); 
             }
           }
         }
-        products.push(product);
+        products.push({...product, new_price: newPrice});
       });
       if (dataInvalid.length > 0) {
-        return res.status(400).json(dataInvalid);
+        return res.status(400).json({errors: dataInvalid});
       }
       return res.status(200).json(products);
     } catch (error) {

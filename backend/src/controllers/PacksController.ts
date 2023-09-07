@@ -5,9 +5,11 @@ import { PacksInterface, ProductsInterface } from '../model/interfaces';
 
 class PacksController {
   async getAll(req: Request, res: Response) {
-    const queryString = `SELECT * FROM packs;`;
+    const queryString = `SELECT pack_id, SUM(qty) as total_qty
+    FROM packs
+    GROUP BY pack_id;`;
     db.query(queryString, (err, result) => {
-      return res.status(400).json(result);
+      return res.status(200).json(result);
     });
   }
   async getInfoByPackId(req: Request, res: Response) {
@@ -37,7 +39,6 @@ class PacksController {
               }
             });
           });
-          console.log()
           packTotal += productData.sales_price * e.qty;
         })
       );
