@@ -52,7 +52,7 @@ function FileUpload() {
 
   const updateFieldsInDatabase = async () => {
     try {
-      const response = await api.post('/update-products', data);
+      await api.post('/update-products', data);
       alert('Campos atualizados com sucesso!');
       window.location.reload();
     } catch (error) {
