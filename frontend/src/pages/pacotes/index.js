@@ -94,7 +94,7 @@ const Pacotes = () => {
                   return (
                     <>
                       <p className="card-text">Codigo: {item.code}</p>
-                      <p className="card-text">Nome: {item.code}</p>
+                      <p className="card-text">Nome: {item.name}</p>
                       <p className="card-text">Quantidade: {item.qty}</p>
                       <p className="card-text">Preço de Custo: {item.cost_price}</p>
                       <p className="card-text">Preço de venda: {item.sales_price}</p>
